@@ -1,26 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import * as S from "./styles";
-import { api } from "../../services/api";
-
-interface TagData {
-  name: string;
-}
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function TagSection() {
-  const [tags, setTags] = useState<TagData[]>([]);
-
-  useEffect(() => {
-    async function fetchTags() {
-      try {
-        const response = await api.get<TagData[]>("/tags");
-        setTags(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar as tags:", error);
-      }
-    }
-
-    fetchTags();
-  }, []);
+  const { tags } = useContext(GlobalContext);
 
   return (
     <S.Container>

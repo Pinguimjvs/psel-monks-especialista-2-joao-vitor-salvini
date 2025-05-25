@@ -1,28 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import * as S from "./styles";
-import { api } from "../../services/api";
+import { GlobalContext } from "../../context/GlobalContext";
 
-interface CardData {
-  title: string;
-  subtitle: string;
-  imageUrl: string;
-}
-
-export default function CardSection() {
-  const [cards, setCards] = useState<CardData[]>([]);
-
-  useEffect(() => {
-    async function fetchCards() {
-      try {
-        const response = await api.get<CardData[]>("/cards");
-        setCards(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar os cards:", error);
-      }
-    }
-
-    fetchCards();
-  }, []);
+export default function CitiesList() {
+  const { cards } = useContext(GlobalContext);
 
   return (
     <S.Container>

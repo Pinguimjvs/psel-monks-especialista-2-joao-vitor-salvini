@@ -1,4 +1,3 @@
-// components/DownloadSection/index.tsx
 import * as S from "./styles";
 
 export default function DownloadSection() {

@@ -15,7 +15,7 @@ cd backend
 docker-compose up -d
 ```
 
-Acesse `http://localhost:8000` para visualizar a API PHP.
+Acesse `http://localhost:8000/api/tags e http://localhost:8000/api/cards` para visualizar a API PHP.
 
 ---
 

@@ -97,7 +97,7 @@ export const Links = styled.ul`
 
   @media (max-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // 3 por linha
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     max-width: 320px;
     margin: 0 auto;
@@ -107,7 +107,7 @@ export const Links = styled.ul`
     }
 
     li:nth-child(4) {
-      grid-column: 2 / 3; // ocupa a segunda coluna
+      grid-column: 2 / 3;
     }
   }
 `;

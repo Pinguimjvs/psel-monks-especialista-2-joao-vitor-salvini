@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import CardSection from "../components/CardSection";
+import CitiesList from "../components/CitiesList";
 import FormSection from "../components/FormSection";
 import Footer from "../components/Footer";
 import DownloadSection from "../components/DownloadSection";
@@ -46,17 +46,12 @@ export default function Home() {
     <>
       <TopContent>
         <Header />
-
         <Hero />
-
         <HeroImg src="/hero/heroLogo.png" alt="Logo no hero" />
       </TopContent>
-      {/* <Categories /> */}
-      <CardSection />
-
+      <CitiesList />
       <ImageSection />
       <DownloadSection />
-      {/* <AppSection /> */}
       <TagsSection />
       <CardListSection />
       <FormSection />

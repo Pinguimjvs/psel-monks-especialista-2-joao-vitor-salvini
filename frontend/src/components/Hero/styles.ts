@@ -58,7 +58,7 @@ export const ScrollImgContent = styled.div`
   margin-top: 3.75rem;
 
   @media (max-width: 768px) {
-    margin-top: 0rem;
+    margin-top: 1rem;
   }
 `;
 
