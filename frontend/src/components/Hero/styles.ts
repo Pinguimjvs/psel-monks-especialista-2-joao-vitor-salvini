@@ -6,8 +6,6 @@ export const Container = styled.section`
   position: relative;
   height: fit-content;
   background: #2d2d2d;
-  border-bottom-left-radius: 2.25rem;
-  border-bottom-right-radius: 2.25rem;
   color: #fff;
   padding: 1.5rem 0rem 1.5rem 5rem;
   text-align: left;

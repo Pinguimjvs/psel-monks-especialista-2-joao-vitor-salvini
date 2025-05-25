@@ -15,6 +15,7 @@ export const Container = styled.header<ContainerProps>`
   ${({ $menuOpen }) =>
     $menuOpen &&
     `
+    width: 100vw;
     z-index: 5;
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
@@ -29,6 +30,10 @@ export const LogoImg = styled.img`
   width: 8.75rem;
   height: auto;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 5.875rem;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -71,21 +76,17 @@ export const BurgerMenu = styled.div`
 
 export const Modal = styled.div`
   position: fixed;
-  top: 4rem;
+  top: 0;
   left: 0;
   background: #e4b9ff;
   width: 100vw;
-  height: calc(100vh - 4rem);
-  padding: 2rem;
+  height: 100vh;
+  padding: 5rem 2rem 2rem 2rem;
   z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: auto;
-
-  @media (max-width: 768px) {
-    padding-top: 2rem;
-  }
 `;
 
 export const ModalNav = styled.ul`

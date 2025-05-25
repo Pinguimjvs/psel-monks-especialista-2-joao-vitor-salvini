@@ -140,6 +140,10 @@ export const Numbers = styled.div`
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   background-color: #dfdcd5;
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+  }
 `;
 
 export const Counters = styled.div`
@@ -147,6 +151,10 @@ export const Counters = styled.div`
   gap: 1.5rem;
 
   align-items: center;
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+  }
 `;
 
 export const Button = styled.button`
