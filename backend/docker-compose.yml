@@ -1,6 +1,8 @@
+version: '3.9'
+
 services:
   php:
-    platform: linux/amd64
+    platform: linux/amd64         
     build: .
     ports:
       - "8000:80"
@@ -10,8 +12,8 @@ services:
       - db
 
   db:
-    platform: linux/amd64
-    image: mysql:5.7
+    platform: linux/amd64         
+    image: mysql:8                
     container_name: db
     restart: always
     environment:
@@ -21,8 +23,10 @@ services:
       MYSQL_PASSWORD: pass
     ports:
       - "3306:3306"
+    command: --innodb-use-native-aio=0q
     volumes:
-      - db_data:/var/lib/mysql
+      - monks_mysql_data:/var/lib/mysql   
+      - ./mysql-init:/docker-entrypoint-initdb.d
 
 volumes:
-  db_data:
+  monks_mysql_data:

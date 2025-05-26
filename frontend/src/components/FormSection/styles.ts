@@ -167,9 +167,15 @@ export const Button = styled.button`
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, opacity 0.3s, cursor 0.3s;
 
   &:hover {
     background-color: #caaee0;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #decbed;
   }
 `;

@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const TopContent = styled.div`
   display: flex;
   position: relative;
-  width: 100vw;
+  width: 100%;
   border-bottom-left-radius: 2.25rem;
   border-bottom-right-radius: 2.25rem;
   overflow: hidden;
@@ -18,7 +18,7 @@ export const TopContent = styled.div`
 
 export const LeftSide = styled.div`
   width: 70%;
-  background-color: #dfbbfe;
+  background-color: #2d2d2d;
   z-index: 1;
 
   @media (max-width: 768px) {

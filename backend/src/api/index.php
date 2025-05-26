@@ -1,21 +1,29 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Origin: http://localhost:3000");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Credentials: true");
+header('Content-Type: application/json; charset=utf-8');
 
-$mysqli = new mysqli("db", "user", "password", "monks");
+$request = $_SERVER['REQUEST_URI'];
 
-if ($mysqli->connect_error) {
-    http_response_code(500);
-    echo json_encode(["error" => "Erro na conexão com o banco"]);
-    exit();
+switch ($request) {
+    case '/api/cards':
+        require __DIR__ . '/controller/cards-controller.php';
+        break;
+
+    case '/api/tags':
+        require __DIR__ . '/controller/tags-controller.php';
+        break;
+        
+    case '/api/form':
+        require __DIR__ . '/controller/form-controller.php';
+        break;
+    default:
+        http_response_code(404);
+        echo json_encode([
+            'error' => 'Rota não encontrada',
+            'request' => $request 
+        ]);
+        break;
 }
-
-$result = $mysqli->query("SELECT id, title, imageUrl FROM cards");
-
-$cards = [];
-
-while ($row = $result->fetch_assoc()) {
-    $cards[] = $row;
-}
-
-echo json_encode($cards);
