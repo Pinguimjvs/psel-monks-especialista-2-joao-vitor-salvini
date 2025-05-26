@@ -19,6 +19,10 @@ switch ($request) {
     case '/api/form':
         require __DIR__ . '/controller/form-controller.php';
         break;
+
+    case '/api/security':
+        require __DIR__ . '/controller/security-controller.php';
+        break;
     default:
         http_response_code(404);
         echo json_encode([

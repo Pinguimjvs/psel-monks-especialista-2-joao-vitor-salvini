@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as S from "./styles";
 import { api } from "../../services/api";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function SecurityForm() {
   const [field1, setField1] = useState("");
@@ -9,8 +10,10 @@ export default function SecurityForm() {
   const [field4, setField4] = useState("");
 
   const [result, setResult] = useState("");
-  const num1 = 427;
-  const num2 = 628;
+  const { securityNumbers } = useContext(GlobalContext);
+
+  const num1 = securityNumbers?.num1 ?? 0;
+  const num2 = securityNumbers?.num2 ?? 0;
 
   const expected = num1 + num2;
 
